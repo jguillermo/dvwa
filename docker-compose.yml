@@ -1,0 +1,18 @@
+version: '2'
+services:
+
+  php:
+    image: jguillermo/php-apache:7.1
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - 8081:80
+
+  mysql:
+    image: jguillermo/mysql:5.6
+    environment:
+      MYSQL_ROOT_PASSWORD: p@ssw0rd
+      MYSQL_USER : root
+      MYSQL_DATABASE: dvwa
+    ports:
+      - 3359:3306
